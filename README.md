@@ -6,6 +6,9 @@
 ###########################
 #### CEPHADM                           
 ###########################
+vagrant box add CentOsRoot file://D:\VagrantBox\CentOsRoot.box
+
+
 ```bash
 vagrant up                              # поднимутся 6 ВМ: 3*mon и 3*osd. Если что то пошло не так, всегда есть 'vagrant destroy -f' - убить все ВМ
 vagrant ssh mon1                        # подключаемся к монитору1

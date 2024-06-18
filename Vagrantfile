@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
             yum update -y
             yum install python3-pip -y
           SHELL
-           vb.customize ["storagectl", :id, "--name", "SATA", "--add", "sata" ]
+          # vb.customize ["storagectl", :id, "--name", "SATA", "--add", "sata" ]
            file_to_disk = "./disk_osd-#{node[:hostname]}.vdi"
              unless File.exist?(file_to_disk)
                vb.customize ['createhd', '--filename', file_to_disk, '--size', 10 * 1024]
