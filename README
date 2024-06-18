@@ -3,56 +3,11 @@
     VirtualBox 6.1.26 r145957 (Qt5.6.2)
     Vagrant 2.4.1
     Ansible 2.6 on Ansible host (autoinstall by ansible_host.sh)
-
-# С этого момента и до CEPHADM (в районе 50 строки)  ВСЁ ГОВНО )))
-# ГЛАВА 2
-# Развёртывание Ceph в контейнерах
-
-cd /ceph/Mastering-Ceph/chapter2
-
-# Подключаемся на сервер ansible:
-vagrant ssh ansible
-
-# Создаем SSH ключ
-ssh-keygen
-
-# Копируем его на все серверы:
-ssh-copy-id mon1
-yes
-vagrant
-
-ssh-copy-id mon2
-yes
-vagrant
-
-ssh-copy-id mon3
-yes
-vagrant
-
-ssh-copy-id osd1
-yes
-vagrant
-
-ssh-copy-id osd2
-yes
-vagrant
-
-ssh-copy-id osd3
-yes
-vagrant
-# можно попробовать подключиться к хостам с сервера ansible: ssh mon2 после подключения exit
-# Продолжаем на сервере ansible
-cd /etc/ansible
-
-ansible-playbook -K site.yml
-ansible-playbook site.yml
-vagrant
-
 #################################################################
 ####                       CEPHADM                           ####
 #################################################################
 
-vagrant ssh mon1
+vagrant ssh mon1 osd1
 
 sudo -i
 apt install -y cephadm ceph-common
