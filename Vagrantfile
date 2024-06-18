@@ -3,7 +3,7 @@
 ENV['VAGRANT_SERVER_URL']="https://vagrant.elab.pro" # https://vagrant.elab.pro/downloads/
 
 nodes = [
-  { :hostname => 'ansible', :ip => '192.168.0.40', :box => 'ubuntu/focal64', :ram => 4096, :ansible => 'yes' }, 
+  #{ :hostname => 'ansible', :ip => '192.168.0.40', :box => 'ubuntu/focal64', :ram => 4096, :ansible => 'yes' }, 
   { :hostname => 'mon1', :ip => '192.168.0.41', :box => 'ubuntu/focal64', :ram => 2048, :mon => 'yes' },
   { :hostname => 'mon2', :ip => '192.168.0.42', :box => 'ubuntu/focal64', :ram => 2048, :mon => 'yes' },
   { :hostname => 'mon3', :ip => '192.168.0.43', :box => 'ubuntu/focal64', :ram => 2048, :mon => 'yes' },
