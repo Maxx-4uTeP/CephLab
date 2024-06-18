@@ -7,22 +7,34 @@
 #### CEPHADM                           
 ###########################
 ```bash
-vagrant up #поднимутся 6 ВМ: 3*mon и 3*osd
+vagrant up                              # поднимутся 6 ВМ: 3*mon и 3*osd. Если что то пошло не так, всегда есть 'vagrant destroy -f' - убить все ВМ
+vagrant ssh mon1                        # подключаемся к монитору1
+sudo passwd root                        # меняем пароль руту (и так на каждом хосте. подключаемся, например, ssh mon3 от юзера 
+                                        # vagrant с паролем vagrant(если потребуется))
+                                        #------------------------------------------------
+sudo -i                                 # мама, я админ(root)!
+# ОТ РУТА генерим ssh-сертификат и разливаем его на остальные хосты:
+ssh-keygen
+ssh-copy-id mon2
+......
+ssh-copy-id osd3
+#-----------------------------------------------------------
+apt install -y cephadm ceph-common      # ставим всякие нужные приколюхи
+mkdir /etc/apt/keyrings
+cephadm bootstrap --mon-ip 192.168.0.41 # пилим первый наш монитор!
 
-vagrant ssh mon1
 
-sudo -i
-apt install -y cephadm ceph-common
 
-cephadm bootstrap --mon-ip 192.168.0.41
+
+
 ```
 Результат:
 ```
  Ceph Dashboard is now available at:
 
-              URL: https://mon1:8443/
-             User: admin
-         Password: bgl1widh401
+             URL: https://mon1:8443/
+            User: admin
+        Password: nhz453i2yi1
 
  You can access the Ceph CLI with:
 
