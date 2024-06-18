@@ -6,8 +6,8 @@
 #################################################################
 ####                       CEPHADM                           ####
 #################################################################
-
-vagrant ssh mon1 osd1
+vagrant up mon1 osd1
+vagrant ssh mon1
 
 sudo -i
 apt install -y cephadm ceph-common
