@@ -11,7 +11,7 @@ vagrant box add CentOsRoot file://D:\VagrantBox\CentOsRoot.box
 
 
 ```bash
-vagrant up                              # поднимутся 6 ВМ: 3*mon и 3*osd. Если что то пошло не так, 'vagrant destroy -f' - убить все ВМ
+vagrant up                              # поднимутся 6 ВМ: 3*mon и 3*osd. Если что то пошло не так, всегда есть 'vagrant destroy -f' - убить все ВМ
 vagrant ssh mon1                        # подключаемся к монитору1
 sudo passwd root                        # меняем пароль руту (и так на каждом хосте. подключаемся, например, ssh mon3 от юзера 
                                         # vagrant с паролем vagrant(если потребуется))
