@@ -6,6 +6,7 @@
 ###########################
 #### CEPHADM                           
 ###########################
+
 vagrant box add CentOsRoot file://D:\VagrantBox\CentOsRoot.box
 
 
